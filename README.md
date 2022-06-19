@@ -77,15 +77,15 @@ find ./ -type f -exec sed -i -e 's/<your-docker-repository-name>/YOUR_ACTUAL_DOC
  
  Make sure you are logged into docker: `docker login`
  
- The commands to build the Docker images and push them to Docker Hub are the following. You must replace {your-docker-repository-name} with your actual docker repository name and run these commands in the correct project subdirectories.
+ The commands to build the Docker images and push them to Docker Hub are the following. You must replace <your-docker-repository-name> with your actual docker repository name and run these commands in the correct project subdirectories.
 
 ```bash
 # in ./gateway
-./gradlew bootJar -Pprod jib -Djib.to.image={your-docker-repository-name}/gateway
+./gradlew bootJar -Pprod jib -Djib.to.image=<your-docker-repository-name}>gateway
 # in ./blog
-./gradlew bootJar -Pprod jib -Djib.to.image={your-docker-repository-name}/blog
+./gradlew bootJar -Pprod jib -Djib.to.image=<your-docker-repository-name>/blog
 # in ./store
-./gradlew bootJar -Pprod jib -Djib.to.image={your-docker-repository-name}/store
+./gradlew bootJar -Pprod jib -Djib.to.image=<your-docker-repository-name>/store
 ```
 
 ## Create EKS cluster
