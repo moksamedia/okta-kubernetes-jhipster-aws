@@ -69,6 +69,11 @@ spring:
  ## Build Docker images
  
 In the `kubernetes` subdirectory, **peform a multifile search and replace**, replacing `<your-docker-repository-name>` with your actual Docker Hub repository name.
+
+If you open a Bash shell and navigate to the `kubernetes` subdirectory, you can use the following command in linux to perform this operation. Replace `YOUR_ACTUAL_DOCKER_REPO_NAME` with your actual Docker hub repository name.
+```bash
+find ./ -type f -exec sed -i -e 's/<your-docker-repository-name>/YOUR_ACTUAL_DOCKER_REPO_NAME/g' {} \;
+```
  
  Make sure you are logged into docker: `docker login`
  
